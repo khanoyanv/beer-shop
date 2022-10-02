@@ -1,0 +1,495 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+* a {
+  text-decoration: none;
+  color: inherit;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+}
+
+.main-list {
+  width: 100%;
+}
+
+/* Header styling here */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+  background-color: #4545458e;
+  border-bottom: 1px solid #DD9B31;
+}
+
+.header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../public/images/cover-image.jpg);
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.header-logo {
+  width: 10%;
+  align-self: center;
+  justify-self: start;
+}
+
+.header p, h1 {
+  margin: 0;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.home-button {
+  position: absolute;
+  top: 3%;
+  align-self: center;
+  color: #DD9B31;
+  padding: 5px;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  transition: border 150ms ease-in-out;
+  font-family: cursive;
+}
+
+.home-button:hover {
+  border: 2px solid #DD9B31
+}
+
+.welcome-quote {
+  font-family: cursive;
+  color: #DD9B31;
+  align-self: center;
+}
+
+.welcome-shop-name {
+  letter-spacing: 3px;
+  color: white;
+}
+
+.cart {
+  align-self: baseline;
+  font-style: normal;
+  font-family: cursive;
+  font-size: 14px;
+  padding: 5px;
+  margin-bottom: auto;
+  color: #DD9B31;
+  letter-spacing: 8px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  transition: border 150ms ease-in-out;
+}
+
+.cart:hover {
+  border: 2px solid #DD9B31;
+}
+
+.back-button-container {
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.bi.bi-arrow-left.show {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: #DD9B31;
+  height: 100%;
+  font-size: 30px;
+  transition: background-color 150ms ease-in-out;
+}
+
+.bi.bi-arrow-left.show:hover {
+  background-color: #4545452c;
+  cursor: pointer;
+}
+
+.bi.bi-arrow-left.hide {
+  display: none;
+}
+
+/* footer styling here */
+
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #454545;
+  color: white;
+  padding: 20px 0;
+}
+
+.our-information {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #DD9B31;
+  font-family: cursive;
+  font-style: normal;
+}
+
+.copyright {
+  align-self: center;
+  color: #DD9B31;
+  font-family: cursive;
+}
+
+/* Beer list item styling here */
+
+.beer-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5ch;
+  justify-content: center;
+  margin-bottom: 5ch
+}
+
+.beer-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 15px;
+  border-radius: 4px;
+  height: 100%;
+  width: 70%;
+  padding-top: 15px;
+  transition: background-color 200ms ease-in-out;
+}
+
+.beer-list-item:hover {
+  background-color: #c0b9b994;
+}
+
+.beer-list-item h2, h4 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.beer-list-item-image {
+  cursor: pointer;
+  max-width: 100%;
+  height: 150px;
+}
+
+.beer-list-item-name {
+  font-family: cursive;
+  color: #DD9B31;
+}
+
+.beer-list-item-price {
+  font-family: cursive;
+}
+
+/* single beer page styling */
+
+.single-beer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.single-beer-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.single-beer-image {
+  width: 100px;
+  height: 300px;
+}
+
+.single-beer-title {
+  font-family: cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.single-beer-tagline {
+  font-family: cursive;
+  color: #DD9B31;
+}
+
+.single-beer-description {
+  font-family: cursive;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.add-to-cart-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;  
+}
+
+
+.sub-add-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #DD9B31;
+  font-size: 20px;
+}
+
+
+.add-to-cart-button {
+  padding: 5px;
+  cursor: pointer;
+  color: #DD9B31;
+  font-family: cursive;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border 200ms ease;
+}
+
+.add-to-cart-button:hover {
+  border: 2px solid #DD9B31;
+}
+
+.sub-quantity:hover, .add-quantity:hover {
+  cursor: pointer;
+}
+
+/* Cart styling here */
+
+.empty-cart-text {
+  font-family: cursive;
+  margin-top: 10%;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20ch;
+}
+
+.cart-list-item {
+  display: grid;
+  grid-template-columns: 10% 15% 10% 5% 5%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  padding: 0 20%;
+}
+
+.cart-list-item-quantity-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 14px;
+  padding: 5px;
+  font-size: 10px;
+  border: 1px solid #D6D6D6;
+  border-radius: 36px;
+  color: #DD9B31;
+}
+
+.arrow-up, .arrow-down {
+  cursor: pointer;
+}
+
+.cart-list-item-image {
+  max-width: 40%;
+  max-height: 50%;
+}
+
+.cart-list-item-title {
+  font-family: cursive;
+  color: #DD9B31;
+}
+
+.cart-list-item-price {
+  font-family: cursive;
+}
+
+.close {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border: 1px solid #D6D6D6;
+  border-radius: 50%;
+  color: #DD9B31;
+}
+
+/* Similiar beer items styling */
+
+.loading-similiar-beers {
+  font-family: cursive;
+}
+
+.similiar-beers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  width: 100ch;
+  gap: 40px;
+}
+
+.similiar-beer-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.similiar-beer-item-name-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.similiar-beer-item-image {
+  cursor: pointer;
+  max-width: 20%;
+  max-height: 40%; 
+}
+
+.similiar-beer-item-name {
+  cursor: pointer;
+  font-family: cursive;
+  color: #DD9B31;
+  margin: 0;
+}
+
+.similiar-beer-item-price {
+  cursor: pointer;
+  font-family: cursive;
+  margin: 0;
+}
+
+/* List filter styling */
+
+.list-filter-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #454545;
+  padding: 5px 0;
+}
+
+.search-bar {
+  width: 40%;
+  padding: 5px 20px;
+  margin-right: 2%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 3px;
+  font-family: cursive;
+  color: #DD9B31;
+  transition: border-bottom 200ms ease-in;
+}
+
+.search-bar:focus {
+  border-bottom: 2px solid #DD9B31;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-form span {
+  color: #DD9B31;
+  font-family: cursive;
+  font-size: 12px;
+}
+
+.brewed-input {
+  width: 10%;
+  padding: 5px 5px 5px 15px;
+  margin-left: 1%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 3px;
+  font-family: cursive;
+  color: #DD9B31;
+  transition: border-bottom 200ms ease-in;
+}
+
+.filter-button {
+  cursor: pointer;
+  color: #DD9B31;
+  padding: 5px;
+  margin-left: 1%;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: border 150ms ease-in-out;
+  font-family: cursive;
+}
+
+.filter-button:hover {
+  border: 1px solid #DD9B31
+}
+
+.reset-button {
+  cursor: pointer;
+  color: #DD9B31;
+  padding: 5px;
+  margin-left: 1%;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: border 150ms ease-in-out;
+  font-family: cursive;
+}
+
+.reset-button:hover {
+  border: 1px solid #DD9B31
+}
