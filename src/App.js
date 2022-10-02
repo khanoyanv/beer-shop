@@ -89,13 +89,14 @@ function App() {
       )
       filteredByDate.length ? dispatch(loadBeers(filteredByDate)) : alert(`No beers brewed after ${date}`)
     }
-    if(name) {
+    if(name && name !== '') {
       const filteredByName = beers.filter(beer => 
         beer.name.includes(name) || 
         beer.name.includes(name.charAt(0).toUpperCase() + name.slice(1))
       )
       dispatch(loadBeers(filteredByName))
-    } else {
+    }
+    if(!name && !brewedAfter && !brewedBefore) {
       dispatch(loadBeers(initialBeers))
     }
   }
